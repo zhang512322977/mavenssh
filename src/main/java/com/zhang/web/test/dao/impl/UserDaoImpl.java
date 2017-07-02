@@ -10,6 +10,8 @@ import com.zhang.web.test.entity.User;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
+	
+	
 	@Override
 	public void save(User entity) {
 		// TODO Auto-generated method stub

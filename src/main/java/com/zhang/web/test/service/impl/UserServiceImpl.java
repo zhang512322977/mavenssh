@@ -10,12 +10,16 @@ import org.springframework.stereotype.Service;
 import com.zhang.web.test.dao.UserDao;
 import com.zhang.web.test.entity.User;
 import com.zhang.web.test.service.UserService;
-@Service("userService")
+/*@Service("userService")*/
 public class UserServiceImpl implements UserService {
-	@Resource
+	
 	private UserDao userDao;
 
 	
+	
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
 	@Override
 	public void save(User entity) {
 		System.out.println("save");

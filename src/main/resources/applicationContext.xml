@@ -64,8 +64,16 @@
 	<bean id="userDao" class="com.zhang.web.test.dao.impl.UserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean id="userService" class="com.zhang.web.test.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
 	<bean id="userAction" class="com.zhang.web.test.action.UserAction"
-		scope="prototype"></bean>
+		scope="prototype">
+	<property name="userService" ref="userService"></property>	
+	</bean>
 	<!-- <import resource="com/zhang/web/*/action/*-spring.xml" /> -->
-	<context:component-scan base-package="com.zhang.web.test.service.impl"></context:component-scan>
+	<!-- <context:component-scan base-package="com.zhang.web.test.service.impl">
+	
+	</context:component-scan> -->
 </beans>
